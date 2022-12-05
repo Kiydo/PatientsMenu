@@ -59,7 +59,7 @@ def determineID(x, patientID):
 #   EDIT PATIENT
 def editPatientInfo():
     patientRead = readPatientsFile()
-    patientID = int(input("Enter the Patient ID: "))
+    patientID = int(input("\nEnter the Patient ID: "))
     if determineID(id_list, patientID): # If ID exists
         index = id_list.index(patientID) # Counts Posistion of list
         print(patientRead[index])   # Uses index as position for already existent patient list
@@ -81,7 +81,7 @@ def editPatientInfo():
 #   ADD PATIENT
 def addPatientToList():
     for l in readPatientsFile():
-        patientID = int(input("Enter Patient ID: "))
+        patientID = int(input("\nEnter Patient ID: "))
         if determineID(id_list, patientID): # ERROR if ID exists
             print("ID already exists")
             continue
@@ -97,7 +97,7 @@ def addPatientToList():
 #   SEARCH PATIENT
 def searchPatientById():
     patientRead = readPatientsFile()
-    patientID = int(input("Enter the Patient ID: "))
+    patientID = int(input("\nEnter the Patient ID: "))
     if determineID(id_list, patientID): # If ID Exists
         print('{:<4} {:<9s} {:<11s} {:<9s} {:<9}'.format("ID", "Name", "Diagnosis", "Gender", "Age"))
         index = id_list.index(patientID)
